@@ -1,0 +1,490 @@
+/* font-family: 'Playfair Display', serif; */
+
+/* font-family: 'Gilroy'; */
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0; /* обнуление, чтобы все было с нач */
+  font-family: 'Gilroy';
+  background-color: #0B1D26; /* общий фон */
+  background-image: url("../img/bg/BG.jpg"); /* накл картинку */
+  background-size: 100% auto; /* если бы было cover растянуло бы картинку не правильно 100% раст по шир на 100 и авт по высоте */
+  background-repeat: no-repeat;/* no-repeat; чтобы не повт */
+  color: #fff;
+}
+
+
+/* BASE */
+
+.container_wide {
+  margin: 0 auto;
+  /* чтобы контейнер находился по центру */
+  width: 1760px;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  /* чтобы все выстраивалось */
+}
+
+.space_between {
+  /* для удобства чтобы не смешивать с рядом */
+  justify-content: space-between;
+}
+
+
+.align-center{
+  align-items:center;
+}
+/* HEADER */
+
+.header{
+  padding-top: 64px;
+  padding-bottom: 843px;
+}
+
+.nav-wrapper{
+  margin-bottom: 198px; /* отстут от текста который внизу */
+}
+
+.logo{
+  
+  font-family: 'Playfair Display',
+  serif;
+  font-size: 32px;
+  font-weight: 700; /* BOLD */
+}
+
+.nav{
+  
+  font-family: 'Gilroy';
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.nav ul{
+  display: flex;/*  чтобы выстроить в одну линию */
+  margin: 0; /* обнуляем отступ */
+  padding: 0; /* чтобы не было отступов слева */
+  list-style-type: none; /* убираем точки */
+}
+
+.nav li+li {
+  /* li+li вуьераем 1 ую ли внутри nav и потом выбераем ее соседа справа и делаем отступ */
+  margin-left: 40px;
+  
+}
+
+.nav a{
+   /* по ссылкам */
+   color: #fff;
+   text-decoration: none; /* чтобы не было подчёркиваний */
+   transition: color 0.2s ease-in;
+   /* чтобы плавно цвет  *имя свойства у нас цвет длительность и эффект перехода cмягчение*/
+}
+
+.nav a:hover{ /* когда мы наводим стрелку */
+  color: #FBD784;
+}
+
+.account{
+  position: relative;
+  padding-left: 30px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;;
+
+  transition: color 0.2s ease-in
+}
+
+.account:hover { /*  без а потому что мы дали класс */
+  /* когда мы наводим стрелку */
+  color: #FBD784;
+}
+
+.account::before{
+  display: block;
+  content:"";
+  position: absolute;
+  /* те абсолютно родителя при absolute(позиционируется относительно ближайшего родителя) полностью теряеи физ и можно исп top left*/
+  left: 0;
+  top: 50%;
+  /* сверху 50% */
+  transform: translateY(-50%);
+  width: 20px;
+  /* указываем размеры стрелки */
+  height: 20px;
+  background-image: url("../img/icon/icon.svg");
+  background-size: contain; /* вписываем в блок */ /* !!!!!!!!!!!!!!!!!!!!!!!!!!!1 */
+}
+
+/* HERO */
+
+.hero{
+  display: block; /* если это ссылка то обязательно указываем display:block */
+  
+  margin-left: auto; /* размещаем по центру делаем мини контейнером */
+  margin-right: auto;
+  
+  max-width: 980px; /* макс ширина */
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.180, -0.315, 0.180, 1.650); /* css timing function generation */
+
+}
+
+.hero:hover{/*  hower делает эффект тольео одна : (двоеточие) */
+  transform: translateY(-5%); /* елаем так чтобы заголовок поднимался и в hero сделаем так чтобы он делал это плавно*/
+}
+
+.hero-categoty {
+  margin-bottom: 32px;
+
+  position: relative;
+  padding-left: 104px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.222;
+  /* тут мы делим line-height на font-size */
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #FBD784;
+
+}
+
+.hero-categoty::before { /* для создания линии слева */
+  position: absolute;
+  left: 0;
+
+  top:50%;
+  transform: translateY(-50%);
+
+  display: block; /* чтобы мы блок нарисовали */
+  
+  content: ""; /* чтобы псевдо элемент отражался */
+  width: 72px;
+  height: 2px;
+  background-color: #FBD784;
+}
+
+
+
+.hero-title{
+  margin-bottom: 32px;
+  font-family: 'Playfair Display',
+  serif;
+  font-style: normal;
+  font-weight: 500; /* изменили в html */
+  font-size: 88px; /* line-height: = 100/88 */ /* тк */ /* другой шрифт вместо 88px сделаем 80 */
+  line-height: 1.136;
+
+  text-transform: capitalize;
+  color: #FFFFFF;
+
+
+}
+
+.hero-scroll{
+  display: inline-block; /* чтобы по вел был ограничен */
+  position: relative;
+  padding-right: 32px;
+  /* само расстояние 16 и стрелка 16 и того 32 */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.222;
+  color: #FFFFFF;
+
+}
+
+.hero-scroll::after{
+  display: block;
+  content:"";
+  position: absolute;
+   /* те абсолютно родителя при absolute(позиционируется относительно ближайшего родителя) полностью теряеи физ и можно исп top left*/
+   right: 0;
+   top: 50%; /* сверху 50% */
+   transform: translateY(-50%);
+   width: 16px; /* указываем размеры стрелки */
+   height: 24px;
+   background-image: url("../img/icon/down.svg")
+}
+
+
+/* MAIN */
+.conatainer{
+  max-width: 1492px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+/* ARTICLE */
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-text{
+  position: relative;
+  padding-left: 150px;
+  max-width: 782px;
+  
+}
+
+.article-text::before{
+  position: absolute;
+  left:0;
+  transform: translateY(-50%);
+  display: block;
+  content: attr(data-number);
+  width: 240px;
+  height: 240px;
+
+  
+  font-style: normal;
+  font-weight: 700;
+  font-size: 240px;
+  line-height: 1;
+  opacity: 01;
+
+
+  color: rgba(255, 255, 255, 0.1);
+
+
+}
+
+
+.article-subtitle {
+  margin-bottom: 32px;
+
+  position: relative;
+  padding-left: 94px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.222;
+  /* тут мы делим line-height на font-size */
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #FBD784;
+
+}
+
+.article-subtitle::before {
+  /* для создания линии слева */
+  position: absolute;
+  left: 0;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: block;
+  /* чтобы мы блок нарисовали */
+
+  content: "";
+  /* чтобы псевдо элемент отражался */
+  width: 72px;
+  height: 2px;
+  background-color: #FBD784;
+}
+
+.article-title{
+  margin-bottom: 27px;
+  max-width: 555px;
+  font-family: 'Playfair Display',
+  serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.2; /* 77/64 = 1.2 */
+
+  color: #FFFFFF;
+}
+
+.article-text p{
+  margin-bottom: 27px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.78;
+  color: #FFFFFF;
+
+}
+
+.article-reade-more {
+  display: inline-block;
+  /* чтобы по вел был ограничен */
+  position: relative;
+  padding-right: 40px;
+  /* само расстояние 16 и стрелка 16 и того 32 */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.222;
+  color: #FBD784;
+
+}
+
+.article-reade-more::after {
+  display: block;
+  content: "";
+  position: absolute;
+  /* те абсолютно родителя при absolute(позиционируется относительно ближайшего родителя) полностью теряеи физ и можно исп top left*/
+  right: 0;
+  top: 50%;
+  /* сверху 50% */
+  transform: translateY(-50%);
+  width: 24px;
+  /* указываем размеры стрелки */
+  height: 16px;
+  background-image: url("../img/icon/right.svg")
+}
+
+.article{
+  margin-bottom: 200px;
+}
+
+
+
+.article:nth-child(even){
+  flex-direction: row-reverse;
+}
+
+.article-img img{
+  display: block; /* чтобы убрать отступ */
+}
+
+/* FOOTER */
+
+.footer{
+  padding-bottom: 120px;
+
+}
+
+.footer-copyright-desc{
+
+  max-width: 303px;;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.78;
+ 
+}
+
+.footer-copyright-logo{
+  margin-bottom:24px;
+}
+
+
+.footer-copyright-terms{
+  margin-top: 122px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.78;
+
+  opacity: 0.5;
+}
+
+.space-between{
+  justify-content: space-between;
+
+}
+
+.footer-nav-wrapper{
+  display: flex;
+}
+
+
+.footer-nav + .footer-nav{
+  margin-left: 212px;
+}
+
+.footer-nav{
+  max-width: 200px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.78;
+
+
+  
+
+}
+
+
+.footer-nav ul{
+  padding: 0; /* удаляем все что не нужно */
+  margin: 0;
+  list-style-type: none;
+  
+}
+
+.footer-nav li{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.footer-nav a{
+  position: relative;
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+
+.footer nav li:last-child{
+  margin-bottom: 0; 
+}
+
+
+.footer-nav-title{
+  
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #FBD784;
+  margin-bottom: 24px;
+
+}
+
+
+.footer-nav a::after { /* просто появ */
+  
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity:0;
+  transition: all 0.2s ease-in;
+
+}
+
+
+.footer-nav a:hover::after { /* добавляем эффекты */
+  position: absolute;
+  left:0;
+  bottom: -5px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 1;
+
+}
